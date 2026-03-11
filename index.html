@@ -9,7 +9,12 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Escape the Broken Interface.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Escape the Broken Interface" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="E22CA67E-CB84-401F-855D-D0BD351CAD27" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="25,25" size="100,100">You are UX consultants called to investigate a failing digital ecosystem.
+<tw-storydata name="Escape the Broken Interface" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="1B31EF57-B0D8-4D85-B12D-46BDA7D6E54E" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="25,25" size="100,100">(set:$room1Solved to false)
+(set:$room2Solved to false)
+(set:$room3Solved to false)
+(set:$room4Solved to false)
+
+You are UX consultants called to investigate a failing digital ecosystem.
 
 The platform connects:
 
@@ -36,6 +41,22 @@ Collect the digits to unlock the final terminal.
 
 ---
 
+[[Enter Control Room-&gt;Control]]</tw-passagedata><tw-passagedata pid="2" name="Control" tags="" position="150,25" size="100,100">DIAGNOSTIC STATUS
+
+Room 1 – Design Styles  
+(if:$room1Solved)[✔ Completed]
+
+Room 2 – UX Violations  
+(if:$room2Solved)[✔ Completed]
+
+Room 3 – Customer Journey  
+(if:$room3Solved)[✔ Completed]
+
+Room 4 – Multidevice Strategy  
+(if:$room4Solved)[✔ Completed]
+
+---
+
 [[ROOM 1 – Design Styles-&gt;R1Q1]]
 
 [[ROOM 2 – UX Violations-&gt;R2Q1]]
@@ -44,7 +65,16 @@ Collect the digits to unlock the final terminal.
 
 [[ROOM 4 – Multidevice Strategy-&gt;R4Q1]]
 
-[[FINAL TERMINAL-&gt;Terminal]]</tw-passagedata><tw-passagedata pid="2" name="R1Q1" tags="" position="150,25" size="100,100">ROOM 1 – DESIGN STYLES
+---
+
+(if:$room1Solved and $room2Solved and $room3Solved and $room4Solved)[
+[[Access Final Terminal-&gt;Terminal]]
+]
+(else:)[
+The terminal is locked.
+
+Complete all diagnostic zones to unlock it.
+]</tw-passagedata><tw-passagedata pid="3" name="R1Q1" tags="" position="275,25" size="100,100">ROOM 1 – DESIGN STYLES
 
 Three interface concepts appear.
 
@@ -55,10 +85,8 @@ Three interface concepts appear.
 Which interface represents **Material Design**?
 
 [[Interface C-&gt;R1Q2]]
-
 [[Interface A-&gt;R1Wrong]]
-
-[[Interface B-&gt;R1Wrong]]</tw-passagedata><tw-passagedata pid="3" name="R1Q2" tags="" position="275,25" size="100,100">Correct.
+[[Interface B-&gt;R1Wrong]]</tw-passagedata><tw-passagedata pid="4" name="R1Q2" tags="" position="400,25" size="100,100">Correct.
 
 Material Design uses layered surfaces and subtle shadows.
 
@@ -70,11 +98,9 @@ Content is organized into modular containers.
 
 Which design trend is used?
 
-[[Card-based design-&gt;R1Q3]]
-
 [[Split screen design-&gt;R1Wrong]]
-
-[[Skeuomorphic design-&gt;R1Wrong]]</tw-passagedata><tw-passagedata pid="4" name="R1Q3" tags="" position="400,25" size="100,100">Correct.
+[[Skeuomorphic design-&gt;R1Wrong]]
+[[Card-based design-&gt;R1Q3]]</tw-passagedata><tw-passagedata pid="5" name="R1Q3" tags="" position="525,25" size="100,100">Correct.
 
 Next interface.
 
@@ -88,11 +114,9 @@ Characteristics:
 
 Which design philosophy is applied?
 
-[[Minimalism-&gt;R1Q4]]
-
 [[Material design-&gt;R1Wrong]]
-
-[[Skeuomorphic design-&gt;R1Wrong]]</tw-passagedata><tw-passagedata pid="5" name="R1Q4" tags="" position="525,25" size="100,100">Correct.
+[[Minimalism-&gt;R1Q4]]
+[[Skeuomorphic design-&gt;R1Wrong]]</tw-passagedata><tw-passagedata pid="6" name="R1Q4" tags="" position="650,25" size="100,100">Correct.
 
 Next interface.
 
@@ -102,11 +126,9 @@ Two panels share the interface simultaneously.
 
 Which trend is represented?
 
-[[Split screen layout-&gt;R1Q5]]
-
 [[Single-page application-&gt;R1Wrong]]
-
-[[Flat design-&gt;R1Wrong]]</tw-passagedata><tw-passagedata pid="6" name="R1Q5" tags="" position="650,25" size="100,100">Correct.
+[[Split screen layout-&gt;R1Q5]]
+[[Flat design-&gt;R1Wrong]]</tw-passagedata><tw-passagedata pid="7" name="R1Q5" tags="" position="775,25" size="100,100">Correct.
 
 Next interface.
 
@@ -117,30 +139,24 @@ Navigation scrolls between sections without loading new pages.
 Which design approach is used?
 
 [[Single-page application-&gt;R1Q6]]
-
 [[Card design-&gt;R1Wrong]]
-
-[[Skeuomorphic UI-&gt;R1Wrong]]</tw-passagedata><tw-passagedata pid="7" name="R1Q6" tags="" position="775,25" size="100,100">Correct.
+[[Skeuomorphic UI-&gt;R1Wrong]]</tw-passagedata><tw-passagedata pid="8" name="R1Q6" tags="" position="900,25" size="100,100">Correct.
 
 Next diagnostic.
 
 Which design style intentionally imitates real-world materials and textures?
 
 [[Skeuomorphic design-&gt;R1Q7]]
-
 [[Flat design-&gt;R1Wrong]]
-
-[[Material design-&gt;R1Wrong]]</tw-passagedata><tw-passagedata pid="8" name="R1Q7" tags="" position="900,25" size="100,100">Correct.
+[[Material design-&gt;R1Wrong]]</tw-passagedata><tw-passagedata pid="9" name="R1Q7" tags="" position="1025,25" size="100,100">Correct.
 
 Next question.
 
 Which characteristic best describes **Flat Design**?
 
-[[Minimal depth and simple color blocks-&gt;R1Q8]]
-
 [[Realistic shadows and textures-&gt;R1Wrong]]
-
-[[Complex animation layers-&gt;R1Wrong]]</tw-passagedata><tw-passagedata pid="9" name="R1Q8" tags="" position="1025,25" size="100,100">Correct.
+[[Complex animation layers-&gt;R1Wrong]]
+[[Minimal depth and simple color blocks-&gt;R1Q8]]</tw-passagedata><tw-passagedata pid="10" name="R1Q8" tags="" position="1150,25" size="100,100">Correct.
 
 Next interface.
 
@@ -151,32 +167,26 @@ Large panels allow users to compare products side by side.
 Which design principle supports this layout?
 
 [[Information hierarchy-&gt;R1Q9]]
-
 [[Skeuomorphism-&gt;R1Wrong]]
-
-[[Responsive typography-&gt;R1Wrong]]</tw-passagedata><tw-passagedata pid="10" name="R1Q9" tags="" position="1150,25" size="100,100">Correct.
+[[Responsive typography-&gt;R1Wrong]]</tw-passagedata><tw-passagedata pid="11" name="R1Q9" tags="" position="25,150" size="100,100">Correct.
 
 Final diagnostic.
 
 Which design system explicitly defines rules for layout, motion, and component behavior?
 
-[[Material Design-&gt;R1Correct]]
-
 [[Minimalism-&gt;R1Wrong]]
+[[Material Design-&gt;R1Correct]]
+[[Flat design-&gt;R1Wrong]]</tw-passagedata><tw-passagedata pid="12" name="R1Correct" tags="" position="150,150" size="100,100">(set:$room1Solved to true)
 
-[[Flat design-&gt;R1Wrong]]</tw-passagedata><tw-passagedata pid="11" name="R1Correct" tags="" position="25,150" size="100,100">Room 1 completed.
+Room 1 completed.
 
 Digit revealed:
 
 **2**
 
-Record the digit.
+[[Return to Control Room-&gt;Control]]</tw-passagedata><tw-passagedata pid="13" name="R1Wrong" tags="" position="275,150" size="100,100">Incorrect.
 
-[[Return to Control Room-&gt;Start]]</tw-passagedata><tw-passagedata pid="12" name="R1Wrong" tags="" position="150,150" size="100,100">Incorrect.
-
-Study the interface characteristics again.
-
-[[Return-&gt;R1Q1]]</tw-passagedata><tw-passagedata pid="13" name="R2Q1" tags="" position="275,150" size="100,100">ROOM 2 – UX VIOLATIONS
+[[Return-&gt;R1Q1]]</tw-passagedata><tw-passagedata pid="14" name="R2Q1" tags="" position="400,150" size="100,100">ROOM 2 – UX VIOLATIONS
 
 Inspect the interface.
 
@@ -184,11 +194,9 @@ Inspect the interface.
 
 What is the most serious usability violation?
 
-[[Tiny tap targets-&gt;R2Q2]]
-
 [[Bright colors-&gt;R2Wrong]]
-
-[[Large images-&gt;R2Wrong]]</tw-passagedata><tw-passagedata pid="14" name="R2Q2" tags="" position="400,150" size="100,100">Correct.
+[[Tiny tap targets-&gt;R2Q2]]
+[[Large images-&gt;R2Wrong]]</tw-passagedata><tw-passagedata pid="15" name="R2Q2" tags="" position="525,150" size="100,100">Correct.
 
 Next issue.
 
@@ -196,11 +204,9 @@ Users report the page loads slowly on mobile networks.
 
 Which element most affects performance?
 
-[[Heavy images and scripts-&gt;R2Q3]]
-
 [[Color palette-&gt;R2Wrong]]
-
-[[Font family-&gt;R2Wrong]]</tw-passagedata><tw-passagedata pid="15" name="R2Q3" tags="" position="525,150" size="100,100">Correct.
+[[Font family-&gt;R2Wrong]]
+[[Heavy images and scripts-&gt;R2Q3]]</tw-passagedata><tw-passagedata pid="16" name="R2Q3" tags="" position="650,150" size="100,100">Correct.
 
 Next diagnostic.
 
@@ -211,10 +217,8 @@ Layouts adapt to screen size.
 Which concept is demonstrated?
 
 [[Responsive design-&gt;R2Q4]]
-
 [[Minimalism-&gt;R2Wrong]]
-
-[[Flat design-&gt;R2Wrong]]</tw-passagedata><tw-passagedata pid="16" name="R2Q4" tags="" position="650,150" size="100,100">Correct.
+[[Flat design-&gt;R2Wrong]]</tw-passagedata><tw-passagedata pid="17" name="R2Q4" tags="" position="775,150" size="100,100">Correct.
 
 Next problem.
 
@@ -223,10 +227,8 @@ Multiple banners compete for attention.
 What UX problem occurs?
 
 [[Cognitive overload-&gt;R2Q5]]
-
 [[Security vulnerability-&gt;R2Wrong]]
-
-[[Device incompatibility-&gt;R2Wrong]]</tw-passagedata><tw-passagedata pid="17" name="R2Q5" tags="" position="775,150" size="100,100">Correct.
+[[Device incompatibility-&gt;R2Wrong]]</tw-passagedata><tw-passagedata pid="18" name="R2Q5" tags="" position="900,150" size="100,100">Correct.
 
 Next interface.
 
@@ -236,11 +238,9 @@ Navigation menus appear in different positions across screens.
 
 What issue does this cause?
 
-[[Reduced usability-&gt;R2Q6]]
-
 [[Improved discoverability-&gt;R2Wrong]]
-
-[[Faster loading-&gt;R2Wrong]]</tw-passagedata><tw-passagedata pid="18" name="R2Q6" tags="" position="900,150" size="100,100">Correct.
+[[Faster loading-&gt;R2Wrong]]
+[[Reduced usability-&gt;R2Q6]]</tw-passagedata><tw-passagedata pid="19" name="R2Q6" tags="" position="1025,150" size="100,100">Correct.
 
 Next diagnostic.
 
@@ -248,11 +248,9 @@ Small text forces users to zoom in.
 
 Which principle is violated?
 
-[[Readability-&gt;R2Q7]]
-
 [[Consistency-&gt;R2Wrong]]
-
-[[Color contrast-&gt;R2Wrong]]</tw-passagedata><tw-passagedata pid="19" name="R2Q7" tags="" position="1025,150" size="100,100">Correct.
+[[Color contrast-&gt;R2Wrong]]
+[[Readability-&gt;R2Q7]]</tw-passagedata><tw-passagedata pid="20" name="R2Q7" tags="" position="1150,150" size="100,100">Correct.
 
 Next interface.
 
@@ -262,29 +260,25 @@ Notifications appear frequently and interrupt tasks.
 
 What UX issue can this create?
 
-[[User frustration and interruption-&gt;R2Q8]]
-
 [[Improved engagement-&gt;R2Wrong]]
-
-[[Better navigation-&gt;R2Wrong]]</tw-passagedata><tw-passagedata pid="20" name="R2Q8" tags="" position="1150,150" size="100,100">Correct.
+[[User frustration and interruption-&gt;R2Q8]]
+[[Better navigation-&gt;R2Wrong]]</tw-passagedata><tw-passagedata pid="21" name="R2Q8" tags="" position="25,275" size="100,100">Correct.
 
 Final question.
 
 Which factor is most important for mobile usability?
 
-[[Touch-friendly interaction-&gt;R2Correct]]
-
 [[Decorative textures-&gt;R2Wrong]]
+[[Large background videos-&gt;R2Wrong]]
+[[Touch-friendly interaction-&gt;R2Correct]]</tw-passagedata><tw-passagedata pid="22" name="R2Correct" tags="" position="150,275" size="100,100">(set:$room2Solved to true)
 
-[[Large background videos-&gt;R2Wrong]]</tw-passagedata><tw-passagedata pid="21" name="R2Correct" tags="" position="25,275" size="100,100">Room digit revealed:
+Room digit revealed:
 
 **8**
 
-[[Return to Control Room-&gt;Start]]</tw-passagedata><tw-passagedata pid="22" name="R2Wrong" tags="" position="150,275" size="100,100">Incorrect.
+[[Return to Control Room-&gt;Control]]</tw-passagedata><tw-passagedata pid="23" name="R2Wrong" tags="" position="275,275" size="100,100">Incorrect.
 
-Review the interface and try again.
-
-[[Return-&gt;R2Q1]]</tw-passagedata><tw-passagedata pid="23" name="R3Q1" tags="" position="275,275" size="100,100">ROOM 3 – CUSTOMER JOURNEY &amp; 3C FRAMEWORK
+[[Return-&gt;R2Q1]]</tw-passagedata><tw-passagedata pid="24" name="R3Q1" tags="" position="400,275" size="100,100">ROOM 3 – CUSTOMER JOURNEY &amp; 3C FRAMEWORK
 
 &lt;img src=&quot;images/broken_customer_journey.png&quot; width=&quot;80%&quot;&gt;
 
@@ -295,12 +289,8 @@ However the cart disappears between devices.
 Which principle is violated?
 
 [[Continuity-&gt;R3Q2]]
-
 [[Consistency-&gt;R3Wrong]]
-
-[[Complementarity-&gt;R3Wrong]]</tw-passagedata><tw-passagedata pid="24" name="R3Q2" tags="" position="400,275" size="100,100">Correct.
-
-Next issue.
+[[Complementarity-&gt;R3Wrong]]</tw-passagedata><tw-passagedata pid="25" name="R3Q2" tags="" position="525,275" size="100,100">Correct.
 
 Navigation labels differ across devices.
 
@@ -309,13 +299,9 @@ Desktop: &quot;Cart&quot;
 
 Which principle addresses this?
 
-[[Consistency-&gt;R3Q3]]
-
 [[Complementarity-&gt;R3Wrong]]
-
-[[Minimalism-&gt;R3Wrong]]</tw-passagedata><tw-passagedata pid="25" name="R3Q3" tags="" position="525,275" size="100,100">Correct.
-
-Next diagnostic.
+[[Minimalism-&gt;R3Wrong]]
+[[Consistency-&gt;R3Q3]]</tw-passagedata><tw-passagedata pid="26" name="R3Q3" tags="" position="650,275" size="100,100">Correct.
 
 Each device contributes differently:
 
@@ -326,72 +312,52 @@ Kiosk → inventory lookup
 Which concept describes this?
 
 [[Complementarity-&gt;R3Q4]]
-
 [[Consistency-&gt;R3Wrong]]
-
-[[Continuity-&gt;R3Wrong]]</tw-passagedata><tw-passagedata pid="26" name="R3Q4" tags="" position="650,275" size="100,100">Correct.
-
-Next question.
+[[Continuity-&gt;R3Wrong]]</tw-passagedata><tw-passagedata pid="27" name="R3Q4" tags="" position="775,275" size="100,100">Correct.
 
 Which concept describes a seamless experience across all channels?
 
 [[Omni-channel experience-&gt;R3Q5]]
-
 [[Flat design-&gt;R3Wrong]]
-
-[[Split screen design-&gt;R3Wrong]]</tw-passagedata><tw-passagedata pid="27" name="R3Q5" tags="" position="775,275" size="100,100">Correct.
-
-Next question.
+[[Split screen design-&gt;R3Wrong]]</tw-passagedata><tw-passagedata pid="28" name="R3Q5" tags="" position="900,275" size="100,100">Correct.
 
 Customer journey thinking focuses on:
 
-[[The sequence of interactions across touchpoints-&gt;R3Q6]]
-
 [[Color palette design-&gt;R3Wrong]]
-
-[[Typography selection-&gt;R3Wrong]]</tw-passagedata><tw-passagedata pid="28" name="R3Q6" tags="" position="900,275" size="100,100">Correct.
-
-Next question.
+[[The sequence of interactions across touchpoints-&gt;R3Q6]]
+[[Typography selection-&gt;R3Wrong]]</tw-passagedata><tw-passagedata pid="29" name="R3Q6" tags="" position="1025,275" size="100,100">Correct.
 
 Which stage occurs when users first discover a product?
 
 [[Awareness stage-&gt;R3Q7]]
-
 [[Checkout stage-&gt;R3Wrong]]
+[[Support stage-&gt;R3Wrong]]</tw-passagedata><tw-passagedata pid="30" name="R3Q7" tags="" position="1150,275" size="100,100">Correct.
 
-[[Support stage-&gt;R3Wrong]]</tw-passagedata><tw-passagedata pid="29" name="R3Q7" tags="" position="1025,275" size="100,100">Correct.
+(set:$room3Solved to true)
 
 Digit revealed:
 
 **4**
 
-[[Return to Control Room-&gt;Start]]</tw-passagedata><tw-passagedata pid="30" name="R3Wrong" tags="" position="1150,275" size="100,100">Incorrect.
+[[Return to Control Room-&gt;Control]]</tw-passagedata><tw-passagedata pid="31" name="R3Wrong" tags="" position="25,400" size="100,100">Incorrect.
 
-Reconsider the journey principle.
-
-[[Return-&gt;R3Q1]]</tw-passagedata><tw-passagedata pid="31" name="R4Q1" tags="" position="25,400" size="100,100">ROOM 4 – MULTIDEVICE STRATEGY
+[[Return-&gt;R3Q1]]</tw-passagedata><tw-passagedata pid="32" name="R4Q1" tags="" position="150,400" size="100,100">ROOM 4 – MULTIDEVICE STRATEGY
 
 &lt;img src=&quot;images/devices_ecosystem.png&quot; width=&quot;80%&quot;&gt;
 
 Which device is best suited for **detailed product comparison**?
 
-[[Desktop or laptop-&gt;R4Q2]]
-
 [[Smartwatch-&gt;R4Wrong]]
-
-[[Kiosk-&gt;R4Wrong]]</tw-passagedata><tw-passagedata pid="32" name="R4Q2" tags="" position="150,400" size="100,100">Correct.
-
-Next task.
+[[Kiosk-&gt;R4Wrong]]
+[[Desktop or laptop-&gt;R4Q2]]</tw-passagedata><tw-passagedata pid="33" name="R4Q2" tags="" position="275,400" size="100,100">Correct.
 
 A user scans items while inside the store.
 
 Which device is most appropriate?
 
-[[Mobile phone-&gt;R4Q3]]
-
 [[Desktop computer-&gt;R4Wrong]]
-
-[[Television-&gt;R4Wrong]]</tw-passagedata><tw-passagedata pid="33" name="R4Q3" tags="" position="275,400" size="100,100">Correct.
+[[Mobile phone-&gt;R4Q3]]
+[[Television-&gt;R4Wrong]]</tw-passagedata><tw-passagedata pid="34" name="R4Q3" tags="" position="400,400" size="100,100">Correct.
 
 Next task.
 
@@ -400,80 +366,63 @@ Next task.
 Which device is best for urgent pickup alerts?
 
 [[Mobile phone-&gt;R4Q4]]
-
 [[Desktop computer-&gt;R4Wrong]]
-
-[[Kiosk-&gt;R4Wrong]]</tw-passagedata><tw-passagedata pid="34" name="R4Q4" tags="" position="400,400" size="100,100">Correct.
-
-Next diagnostic.
+[[Kiosk-&gt;R4Wrong]]</tw-passagedata><tw-passagedata pid="35" name="R4Q4" tags="" position="525,400" size="100,100">Correct.
 
 Which device is best for immersive browsing of promotional content?
 
 [[Tablet or desktop-&gt;R4Q5]]
-
 [[Smartwatch-&gt;R4Wrong]]
-
-[[Kiosk-&gt;R4Wrong]]</tw-passagedata><tw-passagedata pid="35" name="R4Q5" tags="" position="525,400" size="100,100">Correct.
-
-Next question.
+[[Kiosk-&gt;R4Wrong]]</tw-passagedata><tw-passagedata pid="36" name="R4Q5" tags="" position="650,400" size="100,100">Correct.
 
 Why should different devices support different tasks?
 
-[[They have different capabilities and contexts-&gt;R4Q6]]
-
 [[Interfaces must always be identical-&gt;R4Wrong]]
-
-[[Design trends require it-&gt;R4Wrong]]</tw-passagedata><tw-passagedata pid="36" name="R4Q6" tags="" position="650,400" size="100,100">Correct.
-
-Next question.
+[[Design trends require it-&gt;R4Wrong]]
+[[They have different capabilities and contexts-&gt;R4Q6]]</tw-passagedata><tw-passagedata pid="37" name="R4Q6" tags="" position="775,400" size="100,100">Correct.
 
 Which device is most suitable for quick glanceable notifications?
 
-[[Smartwatch or mobile-&gt;R4Q7]]
-
 [[Desktop computer-&gt;R4Wrong]]
+[[Smartwatch or mobile-&gt;R4Q7]]
+[[Store kiosk-&gt;R4Wrong]]</tw-passagedata><tw-passagedata pid="38" name="R4Q7" tags="" position="900,400" size="100,100">Correct.
 
-[[Store kiosk-&gt;R4Wrong]]</tw-passagedata><tw-passagedata pid="37" name="R4Q7" tags="" position="775,400" size="100,100">Correct.
+(set:$room4Solved to true)
 
 Digit revealed:
 
 **6**
 
-[[Proceed to Terminal-&gt;Terminal]]</tw-passagedata><tw-passagedata pid="38" name="R4Wrong" tags="" position="900,400" size="100,100">Incorrect.
+[[Return to Control Room-&gt;Control]]</tw-passagedata><tw-passagedata pid="39" name="R4Wrong" tags="" position="1025,400" size="100,100">Incorrect.
 
-Consider the device context.
-
-[[Return-&gt;R4Q1]]</tw-passagedata><tw-passagedata pid="39" name="Terminal" tags="" position="1025,400" size="100,100">FINAL TERMINAL
+[[Return-&gt;R4Q1]]</tw-passagedata><tw-passagedata pid="40" name="Terminal" tags="" position="1150,400" size="100,100">FINAL TERMINAL
 
 Enter the system recovery code.
 
 [[2846-&gt;Success]]
-
 [[2486-&gt;Fail]]
-
 [[2864-&gt;Fail]]
-
-[[8246-&gt;Fail]]</tw-passagedata><tw-passagedata pid="40" name="Fail" tags="" position="1150,400" size="100,100">Access denied.
+[[8246-&gt;Fail]]</tw-passagedata><tw-passagedata pid="41" name="Fail" tags="" position="25,525" size="100,100">Access denied.
 
 Review the diagnostic zones and verify the digits.
 
-[[Return to Control Room-&gt;Start]]</tw-passagedata><tw-passagedata pid="41" name="Success" tags="" position="25,525" size="100,100">System restored.
+[[Return to Control Room-&gt;Control]]</tw-passagedata><tw-passagedata pid="42" name="Success" tags="" position="150,525" size="100,100">System restored.
 
 Interfaces reconnect across devices.
 
 Customer journeys synchronize again.
 
-Final system message:
+To record your completion, submit the form below.
 
-UX is systemic.
+&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLSfEQ-eo6GK1kPQnd68-wou4_94Z0Pn-DTS8qasR58kwiIsE7A/viewform?usp=publish-editor&quot; target=&quot;_blank&quot;&gt;
+Submit Completion Form
+&lt;/a&gt;
 
-Technology alone does not guarantee good design.
+Provide:
 
-Effective UX requires coherent experiences across devices, channels, and moments in the user journey.
-
-User-centered thinking restores the system.
-
-You have successfully repaired the interface.
+• your name  
+• your student ID  
+• the recovery code (2846)
 
 [[Restart Game-&gt;Start]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
